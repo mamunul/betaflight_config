@@ -23,7 +23,7 @@
 
 #define FC_TARGET_MCU     STM32H743
 
-#define BOARD_NAME        XETOZ_D1
+#define BOARD_NAME        XETOZ_H7D1
 #define MANUFACTURER_ID   XETOZ
 
 #define USE_GYRO
