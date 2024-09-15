@@ -64,6 +64,8 @@
 #define UART1_TX_PIN PA9
 #define UART1_RX_PIN PA10
 
+// any UART disables dfu mode, so to activate dfu mode first disable 
+//all UART from ports config of betaflight configurator
 #define UART3_RX_PIN PB11
 #define UART3_TX_PIN PB10
 
@@ -89,10 +91,10 @@
 #define GYRO_1_EXTI_PIN PC4
 #define GYRO_1_CS_PIN PA4
 
+#define USE_GPS
+
 // #define USB_DETECT_PIN PC5
 // #define SDCARD_DETECT_PIN       PA8
-
-
 
 // #define SDCARD_DETECT_INVERTED
 #define SDIO_DEVICE             SDIODEV_1
@@ -124,4 +126,3 @@
 #define SYSTEM_HSE_MHZ 8
 #define GYRO_1_SPI_INSTANCE SPI1
 #define GYRO_1_ALIGN CW180_DEG
-#define GPS_UART SERIAL_PORT_USART3
