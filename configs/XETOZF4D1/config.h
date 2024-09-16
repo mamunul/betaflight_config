@@ -49,6 +49,9 @@
 
 // #define USE_FLASH
 // #define USE_FLASH_W25M512
+// #define USE_FLASH
+// #define USE_FLASH_W25Q128FV
+// #define USE_FLASH_W25M512
 #define USE_SDCARD
 #define USE_SDCARD_SDIO
 
@@ -64,8 +67,10 @@
 #define UART1_TX_PIN PA9
 #define UART1_RX_PIN PA10
 
-// any UART disables dfu mode, so to activate dfu mode first disable 
-//all UART from ports config of betaflight configurator
+// any UART disables dfu mode, so to activate dfu mode first disable
+// all UART from ports config of betaflight configurator, sometimes need to
+// disconnect/disable uart used devices
+
 #define UART3_RX_PIN PB11
 #define UART3_TX_PIN PB10
 
@@ -107,20 +112,18 @@
 #define SDIO_D3_PIN             PC11
 
 #define TIMER_PIN_MAPPING       \
-    TIMER_PIN_MAP(0, PC9, 2, 0) \
     TIMER_PIN_MAP(1, PA3, 1, 1) \
     TIMER_PIN_MAP(2, PB0, 2, 0) \
     TIMER_PIN_MAP(3, PB1, 2, 0) \
-    TIMER_PIN_MAP(4, PA2, 1, 0) \
-    TIMER_PIN_MAP(5, PA0, 2, 0) \
-    TIMER_PIN_MAP(6, PB9, 2, -1)
+    TIMER_PIN_MAP(4, PA2, 1, 0) 
 
 #define ADC1_DMA_OPT 1
+// #define SDCARD_SDIO_DMA_OPT 0
 
 #define DEFAULT_BLACKBOX_DEVICE BLACKBOX_DEVICE_SDCARD
 #define DEFAULT_CURRENT_METER_SOURCE CURRENT_METER_ADC
 // #define DEFAULT_VOLTAGE_METER_SOURCE VOLTAGE_METER_ADC
-#define BEEPER_INVERTED
+// #define BEEPER_INVERTED
 #define BARO_I2C_INSTANCE (I2CDEV_1)
 #define MAG_I2C_INSTANCE (I2CDEV_1)
 #define SYSTEM_HSE_MHZ 8
