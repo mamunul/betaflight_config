@@ -30,8 +30,20 @@
 #define USE_GYRO_SPI_MPU9250
 #define USE_ACC
 #define USE_ACC_SPI_MPU9250
+#define USE_ACC_MPU9250
+#define USE_GYRO_MPU9250
+#define USE_ACC_MPU6500
+#define USE_GYRO_MPU6500
+#define USE_ACC_SPI_MPU6000
+#define USE_GYRO_SPI_MPU6000
+#define USE_ACC_SPI_MPU6500
+#define USE_GYRO_SPI_MPU6500
+
 #define USE_BARO
 #define USE_BARO_BMP085
+#define USE_BARO_MS5611
+#define USE_BARO_BMP280
+#define USE_BARO_DPS310
 #define USE_MAG
 #define USE_MAG_HMC5883
 // #define USE_FLASH
@@ -39,116 +51,110 @@
 #define USE_SDCARD
 #define USE_SDCARD_SDIO
 
-#define BEEPER_PIN           PA15
-#define LED0_PIN             PE3
-#define LED1_PIN             PE4
+#define BEEPER_PIN PE4
+#define LED1_PIN PE0
+#define LED2_PIN PE1
 
-#define MOTOR1_PIN           PB0
-#define MOTOR2_PIN           PB1
-#define MOTOR3_PIN           PA0
-#define MOTOR4_PIN           PA1
+#define MOTOR1_PIN PB0
+#define MOTOR2_PIN PB1
+#define MOTOR3_PIN PA0
+#define MOTOR4_PIN PA1
 
-#define UART1_TX_PIN         PA9
-#define UART1_RX_PIN         PA10
+#define UART1_TX_PIN PA9
+#define UART1_RX_PIN PA10
 
-#define UART2_TX_PIN         PD5
-#define UART3_TX_PIN         PD8
-#define UART4_TX_PIN         PB9
-#define UART6_TX_PIN         PC6
-#define UART7_TX_PIN         PE8
-#define UART8_TX_PIN         PE1
-#define UART2_RX_PIN         PD6
-#define UART3_RX_PIN         PD9
-#define UART4_RX_PIN         PB8
-#define UART6_RX_PIN         PC7
-#define UART7_RX_PIN         PE7
-#define UART8_RX_PIN         PE0
+#define UART3_TX_PIN PD8
+#define UART3_RX_PIN PD9
 
-#define I2C1_SCL_PIN         PB6
-#define I2C1_SDA_PIN         PB7
+#define UART6_TX_PIN PC6
+#define UART6_RX_PIN PC7
 
-#define I2C2_SCL_PIN         PB10
-#define I2C2_SDA_PIN         PB11
+#define UART7_TX_PIN PE8
+#define UART7_RX_PIN PE7
 
-#define SPI1_SCK_PIN         PA5
-#define SPI1_SDI_PIN         PA6
-#define SPI1_SDO_PIN         PD7
+#define I2C1_SCL_PIN PB8
+#define I2C1_SDA_PIN PB9
 
-#define SPI2_SCK_PIN         PB13
-#define SPI3_SCK_PIN         PB3
-#define SPI4_SCK_PIN         PE12
-#define SPI2_SDI_PIN         PB14
-#define SPI3_SDI_PIN         PB4
-#define SPI4_SDI_PIN         PE13
-#define SPI2_SDO_PIN         PB15
-#define SPI3_SDO_PIN         PB5
-#define SPI4_SDO_PIN         PE14
+#define I2C2_SCL_PIN PB10
+#define I2C2_SDA_PIN PB11
 
-#define ADC_VBAT_PIN         PC0
-// #define ADC_RSSI_PIN         PC5
-// #define ADC_CURR_PIN         PC1
-// #define FLASH_CS_PIN         PD3
+#define SPI1_SCK_PIN PA5
+#define SPI1_SDI_PIN PA6
+#define SPI1_SDO_PIN PA7
 
-#define GYRO_1_EXTI_PIN      PB2
-// #define GYRO_2_EXTI_PIN      PE15
-#define GYRO_1_CS_PIN        PC15
-// #define GYRO_2_CS_PIN        PE11
-#define USB_DETECT_PIN       PE2
-#define SDCARD_DETECT_PIN       PC13
+#define SPI2_SCK_PIN PB13
+#define SPI2_SDI_PIN PB14
+#define SPI2_SDO_PIN PB15
 
+#define ADC_VBAT_PIN PC3
+#define ADC_RSSI_PIN PC5
+#define ADC_CURR_PIN PC2
 
+#define GYRO_1_EXTI_PIN PC4
+#define GYRO_1_CS_PIN PC0
 
-#define SDCARD_DETECT_INVERTED
-#define SDIO_DEVICE             SDIODEV_1
-#define SDIO_USE_4BIT           1
-#define SDIO_CK_PIN             PC12
-#define SDIO_CMD_PIN            PD2
-#define SDIO_D0_PIN             PC8
-#define SDIO_D1_PIN             PC9
-#define SDIO_D2_PIN             PC10
-#define SDIO_D3_PIN             PC11
+#define USE_GPS
 
+// #define USB_DETECT_PIN PC5
+// #define SDCARD_DETECT_PIN PD4
+#define SDIO_DEVICE SDIODEV_1
+#define SDIO_USE_4BIT 1
+#define SDIO_CK_PIN PC12
+#define SDIO_CMD_PIN PD2
+#define SDIO_D0_PIN PC8
+#define SDIO_D1_PIN PC9
+#define SDIO_D2_PIN PC10
+#define SDIO_D3_PIN PC11
 
-#define TIMER_PIN_MAPPING \
-    TIMER_PIN_MAP( 0, PA10, 1,  0) \
-    TIMER_PIN_MAP( 1, PB0 , 2,  0) \
-    TIMER_PIN_MAP( 2, PB1 , 2,  1) \
-    TIMER_PIN_MAP( 3, PA0 , 2,  2) \
-    TIMER_PIN_MAP( 4, PA1 , 2,  3) \
-    TIMER_PIN_MAP( 5, PA2 , 2,  4) \
-    TIMER_PIN_MAP( 6, PA3 , 2,  5) \
-    TIMER_PIN_MAP( 7, PD12, 1,  6) \
-    TIMER_PIN_MAP( 8, PD13, 1,  7) \
-    TIMER_PIN_MAP( 9, PD14, 1, 12) \
-    TIMER_PIN_MAP(10, PD15, 1, -1) \
-    TIMER_PIN_MAP(11, PE5 , 1,  0) \
-    TIMER_PIN_MAP(12, PE6 , 1, -1) \
-    TIMER_PIN_MAP(13, PA8 , 1, 14)
+#define TIMER_PIN_MAPPING         \
+    TIMER_PIN_MAP(0, PB0, 2, 0)   \
+    TIMER_PIN_MAP(1, PB1, 2, 1)   \
+    TIMER_PIN_MAP(2, PA0, 2, 2)   \
+    TIMER_PIN_MAP(3, PA1, 2, 3)   \
+    TIMER_PIN_MAP(4, PA2, 2, 4)   \
+    TIMER_PIN_MAP(5, PA3, 2, 5)   \
+    TIMER_PIN_MAP(6, PD12, 1, 6)  \
+    TIMER_PIN_MAP(7, PD13, 1, 7)  \
+    TIMER_PIN_MAP(8, PD14, 1, 12) \
+    TIMER_PIN_MAP(9, PD15, 1, -1) \
+    TIMER_PIN_MAP(10, PE5, 1, 0)  \
+    TIMER_PIN_MAP(11, PE6, 1, -1) \
+    TIMER_PIN_MAP(12, PA8, 1, 14) \
+    TIMER_PIN_MAP(13, PA15, 1, 0) \
+    TIMER_PIN_MAP(14, PC7, 2, 0)  \
+    TIMER_PIN_MAP(15, PC6, 2, 0)  \
+    TIMER_PIN_MAP(16, PB8, 1, 0)  \
+    TIMER_PIN_MAP(17, PB9, 1, 0)
 
-
-
-#define ADC1_DMA_OPT        8
-#define ADC3_DMA_OPT        9
-#define TIMUP1_DMA_OPT      0
-#define TIMUP3_DMA_OPT      2
-#define TIMUP4_DMA_OPT      1
-#define TIMUP5_DMA_OPT      0
+#define ADC1_DMA_OPT 8
+#define ADC3_DMA_OPT 9
+#define TIMUP1_DMA_OPT 0
+#define TIMUP2_DMA_OPT 0
+#define TIMUP3_DMA_OPT 2
+#define TIMUP4_DMA_OPT 1
+#define TIMUP5_DMA_OPT 0
+#define TIMUP8_DMA_OPT 0
 
 // #define DEFAULT_GYRO_TO_USE GYRO_CONFIG_USE_GYRO_BOTH
 #define MAG_I2C_INSTANCE (I2CDEV_1)
-#define BARO_I2C_INSTANCE (I2CDEV_2)
+#define BARO_I2C_INSTANCE (I2CDEV_1)
 #define DEFAULT_BLACKBOX_DEVICE     BLACKBOX_DEVICE_SDCARD
-// #define DEFAULT_CURRENT_METER_SOURCE CURRENT_METER_ADC
+#define DEFAULT_CURRENT_METER_SOURCE CURRENT_METER_ADC
 #define DEFAULT_VOLTAGE_METER_SOURCE VOLTAGE_METER_ADC
 // #define DEFAULT_CURRENT_METER_SCALE 500
-#define BEEPER_INVERTED
-// #define FLASH_SPI_INSTANCE SPI3
-#define USE_SPI_GYRO
+#define SYSTEM_HSE_MHZ 25
 #define GYRO_1_SPI_INSTANCE SPI1
-#define GYRO_1_ALIGN CW90_DEG
-#define GYRO_1_ALIGN_YAW 900
-// #define GYRO_2_SPI_INSTANCE SPI4
-// #define GYRO_2_ALIGN CW180_DEG
-// #define GYRO_2_ALIGN_YAW 1800
+#define GYRO_1_ALIGN CW180_DEG
 
-// #define GPS_UART SERIAL_PORT_UART1
+/*
+USER_LED : PE3
+USER_PB : PC13
+SPI1 SCK/MISO/MOSI/NSS : PB3/PB4/PD7/PD6 (NOR Flash memory)
+SPI4 SCK/MOSI/NSS : PE10/PE13/PE12/PE14/PE11 (LCD)
+QuadSPI CLK/NCS/IO0/IO1/IO2/IO3 : PB2/PB6/PD11/PD12/PE2/PD13 (NOR Flash memory)
+SDMMC1 CLK/DCMD/CD/D0/D1/D2/D3 : PC12/PD2/PD4/PC8/PC9/PC10/PC11 (microSD card)
+USB DM/DP : PA11/PA12 (USB CDC ACM)
+SWD : PA13/PA14
+32KHz : PC14/PC15
+
+*/
