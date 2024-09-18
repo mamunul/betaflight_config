@@ -53,8 +53,8 @@
 #define USE_FLASH_W25Q64
 
 #define BEEPER_PIN           PB2
-#define LED0_PIN             PC11
-#define LED1_PIN             PC12
+#define LED0_PIN             PA13
+#define LED1_PIN             PA14
 
 #define MOTOR1_PIN           PB4
 #define MOTOR2_PIN           PB5
@@ -70,9 +70,9 @@
 #define I2C1_SCL_PIN         PB8
 #define I2C1_SDA_PIN         PB9
 
-#define SPI1_SCK_PIN         PA5
-#define SPI1_SDI_PIN         PA6
-#define SPI1_SDO_PIN         PA7
+// #define SPI1_SCK_PIN         PA5
+// #define SPI1_SDI_PIN         PA6
+// #define SPI1_SDO_PIN         PA7
 
 #define SPI2_SCK_PIN         PB13
 #define SPI2_SDI_PIN         PB14
@@ -83,7 +83,7 @@
 #define ADC_CURR_PIN         PB1
 
 #define GYRO_1_EXTI_PIN      PB10
-#define GYRO_1_CS_PIN        PB11
+#define GYRO_1_CS_PIN        PB12
 
 #define TIMER_PIN_MAPPING \
     TIMER_PIN_MAP( 0, PB4 , 1,  0) \
