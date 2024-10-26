@@ -47,7 +47,7 @@
 #define USE_MAG
 #define USE_MAG_HMC5883
 
-// #define USE_FLASH
+#define USE_FLASH
 // #define USE_FLASH_W25M512
 // #define USE_FLASH_W25Q128FV
 #define USE_FLASH_W25Q64
@@ -70,9 +70,9 @@
 #define I2C1_SCL_PIN         PB8
 #define I2C1_SDA_PIN         PB9
 
-// #define SPI1_SCK_PIN         PA5
-// #define SPI1_SDI_PIN         PA6
-// #define SPI1_SDO_PIN         PA7
+#define SPI1_SCK_PIN         PA5
+#define SPI1_SDI_PIN         PA6
+#define SPI1_SDO_PIN         PA7
 
 #define SPI2_SCK_PIN         PB13
 #define SPI2_SDI_PIN         PB14
@@ -95,7 +95,7 @@
 
 #define ADC1_DMA_OPT        1
 
-
+#define FLASH_SPI_INSTANCE SPI1
 #define DEFAULT_BLACKBOX_DEVICE BLACKBOX_DEVICE_FLASH
 #define DEFAULT_CURRENT_METER_SOURCE CURRENT_METER_ADC
 // #define DEFAULT_VOLTAGE_METER_SOURCE VOLTAGE_METER_ADC
